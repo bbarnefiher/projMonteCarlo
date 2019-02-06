@@ -9,22 +9,22 @@ public class MonteCarlo {
     public MonteCarlo(int k, int h, int r){
         this.h = h;
         this.k = k;
-        this.r = r;
+        this.r = r;///h
     }
 
     public double nextRainDrop_x(){
         Random rand = new Random();
-        raindropX = rand.nextDouble() * k;
+        raindropX = rand.nextDouble() * h;
         return raindropX;
     }
 
     public double nextRainDrop_y(){
         Random rand = new Random();
-        raindropY = rand.nextDouble() * h;
+        raindropY = rand.nextDouble() * k;
         return raindropY;
     }
 
-    public boolean insideCircle(int x, int y){
+    public boolean insideCircle(double x, double y){
 
         if ((x-h)*(x-h) + (y-k)*(y-k)<=r*r){
 
